@@ -12,4 +12,9 @@ chrome.runtime.onInstalled.addListener(function() {
         }]);
       });
   });
-  
+  /**
+   * To-Do List:
+   * Submit the page
+   * Program the timer 
+   * 
+   */
