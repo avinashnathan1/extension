@@ -23,3 +23,11 @@ chrome.runtime.onInstalled.addListener(function() {
    * Program the timer 
    * 
    */
+
+  /**
+   * 
+   * https://stackoverflow.com/questions/58132891/chrome-timer-extension-how-to-keep-timer-running-even-when-extension-is-closed
+   * 
+   * 
+   * 
+   */
