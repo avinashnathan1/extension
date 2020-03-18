@@ -12,22 +12,38 @@
     </head>
     <body>
       <label for = "userName">Your Name: </label>  
-      <input type= "text" id = "userName" name = "userName"><br>
+      <input type= "text" id = "userName" ><br>
 
       <label for = "subName"> Subscription: </label>  
-      <input type= "text" id = "subName" name = "subName"><br>
+      <input type= "text" id = "subName"><br>
 
       <label for = "timeR"> Length of Subscription: </label>  
-      <input type= "text" id = "timeR" name = "timeR"><br>
+      <input type= "text" id = "timeR"><br>
 
       <label for = "email"> Email: </label>  
-      <input type= "text" id = "email" name = "email"><br>
+      <input type= "text" id = "email"><br>
 
-      <input type = "submit" id = "submit" value = "Set Timer" onclick="submitFunction()"> <!-- Check if this onClick is right-->
+      <button onclick = "submitFunction()"> Set Timer </button>
+
+      <input type = "text" id = "test"><br>
+
+      <script>
+        function submitFunction() {
+          var userName = document.getElementById("userName").value;
+          var subName = document.getElementById("subName").value;
+          var timeR = document.getElementById("timeR").value;
+          var email = document.getElementById("email").value;
+
+          document.getElementById("test").value = userName;
+        }
+
+        
+      </script>
+
     </body>
   </html>
 
- <!--- 
+ <!---
   Page 1:
   Putting in the information
   Textboxes:
@@ -38,10 +54,8 @@
     Phone Number (Maybe)
   Button:
     Submit to start the timer
-
    Page 2:
-   Displaying the Timers that a user has
-   Subsription Name (Icon if we can get it)
-   Time Left
-
+    Displaying the Timers that a user has
+    Subsription Name (Icon if we can get it)
+    Time Left
 -->

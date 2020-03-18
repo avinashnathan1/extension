@@ -12,8 +12,10 @@ chrome.runtime.onInstalled.addListener(function() {
         }]);
       });
   });
+  
 
-  var sub_button = document.getElementById("submit");
+
+
   
   /**
    * To-Do List:
