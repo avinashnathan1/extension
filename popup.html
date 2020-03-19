@@ -2,8 +2,30 @@
   <html>
     <head>
       <style>
+        html {
+          height: 175px;
+          width: 275px;
+        }
+
+        body {
+          height: 175px;
+          width: 275px;
+        }
+
+        .pad_left {
+          padding-left: 10px;
+        }
+
+        .time_text {
+          width: 30px;
+        }
+
+        label.bold {
+          font-weight: bold;
+        }
+
         button {
-          height: 30px;
+          height: 20px;
           width: 100px;
           outline: none;
         }
@@ -11,25 +33,37 @@
       </style>
     </head>
     <body>
-      <label for = "userName">Your Name: </label>  
-      <input type= "text" id = "userName" ><br>
+      <label for = "userName" class="bold">Your Name: </label>  
+      <input type= "text" id = "userName" ><br><br>
 
-      <label for = "subName"> Subscription: </label>  
-      <input type= "text" id = "subName"><br>
+      <label for = "subName" class="bold"> Subscription: </label>  
+      <input type= "text" id = "subName"><br><br>
 
-      <label for = "timeR"> Length of Subscription: </label>  
-      <input type= "text" id = "timeR"><br>
+      <label class="bold"> Length of Subscription: </label><br>
 
-      <label for = "email"> Email: </label>  
-      <input type= "text" id = "email"><br>
+      <label for="mm" class="pad_left">Months:</label>
+      <input type= "text" id = "mm" class="time_text">
 
-      <button onclick = "submitFunction()"> Set Timer </button>
+      <label for="dd">Days:</label>
+      <input type= "text" id = "dd" class="time_text">
+
+      <label for="hh">Hours:</label>
+      <input type= "text" id = "hh" class="time_text"><br><br>
+
+      <label for = "email" class="bold"> Email: </label>  
+      <input type= "text" id = "email"><br><br>
+
+      <center>
+        <button onclick = "submitFunction()"> Set Timer </button>
+      </center>
 
       <script>
         function submitFunction() {
           var userName = document.getElementById("userName").value;
           var subName = document.getElementById("subName").value;
-          var timeR = document.getElementById("timeR").value;
+          var num_months = document.getElementById("mm").value;
+          var num_days = document.getElementById("dd").value;
+          var num_hours = document.getElementById("hh").value;
           var email = document.getElementById("email").value;
         }
 
