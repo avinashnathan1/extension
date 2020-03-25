@@ -1,5 +1,3 @@
-
-
 chrome.runtime.onInstalled.addListener(function() {
     chrome.storage.sync.set({color: '#3aa757'}, function() {
       console.log("The color is green.");
@@ -15,17 +13,65 @@ chrome.runtime.onInstalled.addListener(function() {
       });
   });
 
-let timerID;
-let timerTime;
+//let timerID;
+var time;
+var orig_distance;
   
-  chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if (request.cmd === 'START_TIMER') {
-      timerTime = new Date(request.when);
-      timerID = setTimeout(() => {}, timerTime.getTime() - Date.now());
-    } else if (request.cmd === 'GET_TIME') {
-      sendResponse({ time: timerTime });
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.ed && request.incr) {
+    time = request.ed
+    orig_distance = request.incr;
+    var week_mil = 7 * 24 * 60 * 60 * 1000;
+    
+    var notification1 = 24 * 60 * 60 * 1000;
+    var notification2 = 12 * 60 * 60 * 1000;
+    var notification3 = null;
+    var sent_not3 = false;
+    var sent_not2 = false;
+    var sent_not1 = false;
+
+    if (orig_distance >= week_mil) {
+      notification3 = 48 * 60 * 60 * 1000;
     }
-  });
+
+    var x = setInterval(function() {
+      // document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      // + minutes + "m " + seconds + "s ";
+    
+      var now = new Date().now();
+      var distance = time - now;
+
+      //call method to send chrome message in "do some shit"
+      //display countdown
+
+      if (notification3) {
+        if (distance < notification3 && sent_not3 == false) {
+          sent_not3 = true;
+          //do some shit
+        }
+      }
+
+      if (distance < notification2 && sent_not2 == false) {
+        sent_not2 = true;
+        //do some shit
+      }
+
+      if (distance < notification1 && sent_not1 == false) {
+        sent_not1 = true;
+        //do some shit
+      }
+
+      if (distance < 0) {
+        clearInterval(x);
+        //document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+
+    //dfghjkl
+  } else if (request.cmd === 'GET_TIME') {
+    sendResponse({ time: timerTime });
+  }
+});
   
 
   

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
   <html>
     <head>
+      <script type="text/javascript" src="timer.js"></script>
+
       <style>
         html {
           height: 175px;
@@ -44,11 +46,11 @@
       <label for="mm" class="pad_left">Months:</label>
       <input type= "text" id = "mm" class="time_text">
 
-      <label for="dd">Days:</label>
-      <input type= "text" id = "dd" class="time_text">
+      <label for="ww">Weeks:</label>
+      <input type= "text" id = "ww" class="time_text">
 
-      <label for="hh">Hours:</label>
-      <input type= "text" id = "hh" class="time_text"><br><br>
+      <label for="dd">Days:</label>
+      <input type= "text" id = "dd" class="time_text"><br><br>
 
       <label for = "email" class="bold"> Email: </label>  
       <input type= "text" id = "email"><br><br>
@@ -56,19 +58,6 @@
       <center>
         <button onclick = "submitFunction()"> Set Timer </button>
       </center>
-
-      <script>
-        function submitFunction() {
-          var userName = document.getElementById("userName").value;
-          var subName = document.getElementById("subName").value;
-          var num_months = document.getElementById("mm").value;
-          var num_days = document.getElementById("dd").value;
-          var num_hours = document.getElementById("hh").value;
-          var email = document.getElementById("email").value;
-        }
-
-
-      </script>
 
     </body>
   </html>
