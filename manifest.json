@@ -4,7 +4,7 @@
   "description": "End your subscriptions before you get charged!",
   "permissions": ["declarativeContent", "storage"],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["background.js"], // Do we have to add the timer.js file in here?
     "persistent": false
   },
   "page_action": {
