@@ -2,12 +2,12 @@
   "name": "Subscription Extension",
   "version": "1.0",
   "description": "End your subscriptions before you get charged!",
-  "permissions": ["declarativeContent", "storage"],
+  "permissions": ["declarativeContent", "storage", "tabs", "extension", "runtime"],
   "background": {
-    "scripts": ["background.js"], // Do we have to add the timer.js file in here?
+    "scripts": ["background.js"],
     "persistent": false
   },
-  "page_action": {
+  "browser_action": {
     "default_popup": "popup.html",  
     "default_icon": {
       "16": "get_started16.png"
