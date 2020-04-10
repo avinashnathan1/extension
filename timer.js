@@ -13,12 +13,12 @@
 //   // var tot_incr = months_in_mil + weeks_in_mil + days_in_mil;
 //   // var end_date = new Date(now + tot_incr);
 
-//   // chrome.runtime.sendMessage({ ed: end_date, incr: tot_incr}, response => {
-//   //   if (response.time) {
-//   //     const time = new Date(response.time);
-//   //     startTimer(time)
-//   //   }
-//   // });
+chrome.runtime.sendMessage({ ed: end_date, incr: tot_incr}, response => {
+  if (response.time) {
+    const time = new Date(response.time);
+    startTimer(time)
+  }
+});
 
 //   //chrome.tabs.create(function(newTab) {});
 
