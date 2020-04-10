@@ -1,7 +1,7 @@
 {
   "name": "Subscription Extension",
   "version": "1.0",
-  "description": "End your subscriptions before you get charged!",
+  "description": "End your subscriptions before you get charged! ",
   "permissions": ["declarativeContent", "storage", "tabs", "extension", "runtime"],
   "background": {
     "scripts": ["background.js"],
