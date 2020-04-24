@@ -16,11 +16,11 @@ chrome.runtime.onInstalled.addListener(function() {
  document.addEventListener('DOMContentLoaded', setButtonListener);
 
  function setButtonListener() {
-   document.querySelector('settimer').addEventListener('click', function() {
-     chrome.runtime.sendMessage({ cmd: "set"}, response => {
-       console.log("nigga?");
-     })
-   });
+   document.querySelector('settimer').addEventListener('click', timerClicked());
+ }
+
+ function timerClicked() {
+   console.log("worked");
  }
 
 
