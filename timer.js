@@ -13,23 +13,34 @@
 //   // var tot_incr = months_in_mil + weeks_in_mil + days_in_mil;
 //   // var end_date = new Date(now + tot_incr);
 
-chrome.runtime.sendMessage({ ed: end_date, incr: tot_incr}, response => {
-  if (response.time) {
-    const time = new Date(response.time);
-    startTimer(time)
-  }
-});
+//document.addEventListener('DOMContentLoaded', setButtonListener);
+
+document.getElementById('settimer').addEventListener('click', timerClicked());
+//  function setButtonListener() {
+//  }
+
+function timerClicked() {
+  //var username = document.getElementById('userName').textContent;
+  console.log("hello");
+}
+
+// chrome.runtime.sendMessage({ ed: end_date, incr: tot_incr}, response => {
+//   if (response.time) {
+//     const time = new Date(response.time);
+//     startTimer(time)
+//   }
+// });
 
 //   //chrome.tabs.create(function(newTab) {});
 
 //   document.getElementById("userName").innerHTML = "5";
 // }
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.cmd == "set") {
-    document.getElementById("userName").innerHTML = "set";
-  }
-});
+// chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+//   if (request.cmd == "set") {
+//     document.getElementById("userName").innerHTML = "set";
+//   }
+// });
 
 // window.addEventListener('load', function () {
 //   var st = document.getElementById("settimer");
