@@ -22,65 +22,65 @@ chrome.runtime.onInstalled.addListener(function() {
 
 
 
-// let timerID;
-// var time;
-// var orig_distance;
+let timerID;
+var time;
+var orig_distance;
   
-// chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-//   if (request.ed && request.incr) {
-//     time = request.ed
-//     orig_distance = request.incr;
-//     var week_mil = 7 * 24 * 60 * 60 * 1000;
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.ed && request.incr) {
+    time = request.ed
+    orig_distance = request.incr;
+    var week_mil = 7 * 24 * 60 * 60 * 1000;
     
-//     var notification1 = 24 * 60 * 60 * 1000;
-//     var notification2 = 12 * 60 * 60 * 1000;
-//     var notification3 = null;
-//     var sent_not3 = false;
-//     var sent_not2 = false;
-//     var sent_not1 = false;
+    var notification1 = 24 * 60 * 60 * 1000;
+    var notification2 = 12 * 60 * 60 * 1000;
+    var notification3 = null;
+    var sent_not3 = false;
+    var sent_not2 = false;
+    var sent_not1 = false;
 
-//     if (orig_distance >= week_mil) {
-//       notification3 = 48 * 60 * 60 * 1000;
-//     }
+    if (orig_distance >= week_mil) {
+      notification3 = 48 * 60 * 60 * 1000;
+    }
 
-//     var x = setInterval(function() {
-//       // document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-//       // + minutes + "m " + seconds + "s ";
+    var x = setInterval(function() {
+      // document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      // + minutes + "m " + seconds + "s ";
     
-//       var now = new Date().now();
-//       var distance = time - now;
+      var now = new Date().now();
+      var distance = time - now;
 
-//       //call method to send chrome message in "to do"
-//       //display countdown
+      //call method to send chrome message in "to do"
+      //display countdown
 
-//       if (notification3) {
-//         if (distance < notification3 && sent_not3 == false) {
-//           sent_not3 = true;
-//           //to do
-//         }
-//       }
+      if (notification3) {
+        if (distance < notification3 && sent_not3 == false) {
+          sent_not3 = true;
+          //to do
+        }
+      }
 
-//       if (distance < notification2 && sent_not2 == false) {
-//         sent_not2 = true;
-//         //to do
-//       }
+      if (distance < notification2 && sent_not2 == false) {
+        sent_not2 = true;
+        //to do
+      }
 
-//       if (distance < notification1 && sent_not1 == false) {
-//         sent_not1 = true;
-//         //to do
-//       }
+      if (distance < notification1 && sent_not1 == false) {
+        sent_not1 = true;
+        //to do
+      }
 
-//       if (distance < 0) {
-//         clearInterval(x);
-//         //document.getElementById("demo").innerHTML = "EXPIRED";
-//       }
-//     }, 1000);
+      if (distance < 0) {
+        clearInterval(x);
+        //document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
 
-//     //dfghjkl
-//   } else if (request.cmd === 'GET_TIME') {
-//     sendResponse({ time: timerTime });
-//   }
-// });
+    //dfghjkl
+  } else if (request.cmd === 'GET_TIME') {
+    sendResponse({ time: timerTime });
+  }
+});
   
 
   
